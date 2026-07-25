@@ -1,0 +1,53 @@
+<%= link_to "Back to Recurring Tasks", solid_taxi.solid_queue_recurring_tasks_path %>
+
+<h1>Solid Queue Recurring Task</h1>
+
+<nav aria-labelledby="solid_queue-recurring_task-navigation">
+  <h2 id="solid_queue-recurring_task-navigation">Primary navigation</h2>
+  <ul>
+    <li><%= link_to "About", solid_taxi.solid_queue_recurring_task_path(@recurring_task) %></li>
+    <li><%= link_to "Executions", solid_taxi.solid_queue_recurring_task_executions_path(@recurring_task) %></li>
+  </ul>
+</nav>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="4">recurring_execution</th>
+      <th colspan="8">job</th>
+    </tr>
+    <tr>
+      <th>id</th>
+      <th>job_id</th>
+      <th>task_key</th>
+      <th>run_at</th>
+      <th>queue_name</th>
+      <th>class_name</th>
+      <th>arguments</th>
+      <th>priority</th>
+      <th>active_job_id</th>
+      <th>scheduled_at</th>
+      <th>finished_at</th>
+      <th>concurrency_key</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recurring_executions.each do |recurring_execution| %>
+      <tr>
+        <td><%= recurring_execution.id %></td>
+        <td><%= recurring_execution.job_id %></td>
+        <td><%= recurring_execution.task_key %></td>
+        <td><%= recurring_execution.run_at %></td>
+        <td><%= recurring_execution.job.queue_name %></td>
+        <td><%= recurring_execution.job.class_name %></td>
+        <td><%= recurring_execution.job.arguments %></td>
+        <td><%= recurring_execution.job.priority %></td>
+        <td><%= recurring_execution.job.active_job_id %></td>
+        <td><%= recurring_execution.job.scheduled_at %></td>
+        <td><%= recurring_execution.job.finished_at %></td>
+        <td><%= recurring_execution.job.concurrency_key %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,76 @@
+<%= link_to "Back to Recurring Tasks", solid_taxi.solid_queue_recurring_tasks_path %>
+
+<h1>Solid Queue Recurring Task</h1>
+
+<nav aria-labelledby="solid_queue-recurring_task-navigation">
+  <h2 id="solid_queue-recurring_task-navigation">Primary navigation</h2>
+  <ul>
+    <li><%= link_to "About", solid_taxi.solid_queue_recurring_task_path(@recurring_task) %></li>
+    <li><%= link_to "Executions", solid_taxi.solid_queue_recurring_task_executions_path(@recurring_task) %></li>
+  </ul>
+</nav>
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Property</th>
+      <th scope="col">Value</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <th scope="row">id</th>
+      <td><%= @recurring_task.id %></td>
+    </tr>
+
+    <tr>
+      <th scope="row">key</th>
+      <td><%= @recurring_task.key %></td>
+    </tr>
+
+    <tr>
+      <th scope="row">schedule</th>
+      <td>
+        <pre><code><%= @recurring_task.schedule %></code></pre>
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row">command</th>
+      <td>
+        <pre><code><%= @recurring_task.command %></code></pre>
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row">class_name</th>
+      <td><%= @recurring_task.class_name %></td>
+    </tr>
+
+    <tr>
+      <th scope="row">arguments</th>
+      <td><%= @recurring_task.arguments %></td>
+    </tr>
+
+    <tr>
+      <th scope="row">queue_name</th>
+      <td><%= @recurring_task.queue_name %></td>
+    </tr>
+
+    <tr>
+      <th scope="row">priority</th>
+      <td><%= @recurring_task.priority %></td>
+    </tr>
+
+    <tr>
+      <th scope="row">static</th>
+      <td><%= @recurring_task.static %></td>
+    </tr>
+
+    <tr>
+      <th scope="row">description</th>
+      <td><%= @recurring_task.description %></td>
+    </tr>
+  </tbody>
+</table>

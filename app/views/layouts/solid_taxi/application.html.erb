@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Solid taxi</title>
+  <title>🚕 Solid Taxi</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
@@ -10,8 +10,24 @@
   <%= stylesheet_link_tag    "solid_taxi/application", media: "all" %>
 </head>
 <body>
+  <header>
+    <nav aria-labelledby="primary-navigation">
+      <h2 id="primary-navigation">Primary navigation</h2>
+      <ul>
+        <li>solid_queue</li>
+      </ul>
+    </nav>
 
-<%= yield %>
+    <nav aria-labelledby="solid_queue-navigation">
+      <h2 id="solid_queue-navigation">solid_queue navigation</h2>
+      <ul>
+        <li><%= link_to "Recurring Tasks", solid_taxi.solid_queue_recurring_tasks_path %></li>
+      </ul>
+    </nav>
+  </header>
 
+  <main>
+    <%= yield %>
+  </main>
 </body>
 </html>

@@ -1,0 +1,48 @@
+<h1>Solid Queue Recurring Tasks</h1>
+
+<%= form_with(url: url_for, method: :get) do |f| %>
+  <%= fieldset_tag do %>
+    <%= f.label "key", for: :key %>
+    <%= f.text_field :key, placeholder: "key" %>
+
+    <%= f.label "schedule", for: :schedule %>
+    <%= f.text_field :schedule, placeholder: "schedule" %>
+
+    <%= f.label "command", for: :command %>
+    <%= f.text_field :command, placeholder: "command" %>
+    <%= f.label "queue_name", for: :queue_name %>
+    <%= f.text_field :queue_name, placeholder: "queue_name" %>
+
+    <%= f.label "priority", for: :priority %>
+    <%= f.number_field :priority, placeholder: "priority", min: 0 %>
+  <% end %>
+
+  <%= f.submit "Search", name: nil %>
+  <%= button_tag "Reset", type: :reset %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>key</th>
+      <th>schedule</th>
+      <th>command</th>
+      <th>queue_name</th>
+      <th>priority</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recurring_tasks.each do |recurring_task| %>
+      <tr>
+        <td><%= recurring_task.key %></td>
+        <td><%= recurring_task.schedule %></td>
+        <td><%= recurring_task.command %></td>
+        <td><%= recurring_task.queue_name %></td>
+        <td><%= recurring_task.priority %></td>
+        <td><%= link_to "Show", solid_taxi.solid_queue_recurring_task_path(recurring_task) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
