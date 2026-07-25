@@ -1,0 +1,49 @@
+<%= render "solid_taxi/solid_queue/header" %>
+
+<h4><%= SolidQueue::Batch.model_name.human(count: 2) %></h4>
+
+<%= render "query_form", model: @page.query_form %>
+
+<%= render "solid_taxi/pagination", pagination: @page.pagination %>
+
+<table class="solid-taxi--table">
+  <thead>
+    <tr>
+      <th><%= SolidQueue::Batch.human_attribute_name(:id) %></th>
+      <th><%= SolidQueue::Batch.human_attribute_name(:active_job_batch_id) %></th>
+      <th><%= SolidQueue::Batch.human_attribute_name(:description) %></th>
+      <th><%= SolidQueue::Batch.human_attribute_name(:on_finish) %></th>
+      <th><%= SolidQueue::Batch.human_attribute_name(:on_success) %></th>
+      <th><%= SolidQueue::Batch.human_attribute_name(:on_failure) %></th>
+      <th><%= SolidQueue::Batch.human_attribute_name(:metadata) %></th>
+      <th style="text-align: right;"><%= SolidQueue::Batch.human_attribute_name(:total_jobs) %></th>
+      <th style="text-align: right;"><%= SolidQueue::Batch.human_attribute_name(:completed_jobs) %></th>
+      <th style="text-align: right;"><%= SolidQueue::Batch.human_attribute_name(:failed_jobs) %></th>
+      <th style="text-align: right;"><%= SolidQueue::Batch.human_attribute_name(:enqueued_at) %></th>
+      <th style="text-align: right;"><%= SolidQueue::Batch.human_attribute_name(:finished_at) %></th>
+      <th style="text-align: right;"><%= SolidQueue::Batch.human_attribute_name(:failed_at) %></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @page.query.rows.each do |batch| %>
+      <tr>
+        <td><%= batch.id %></td>
+        <td><%= batch.active_job_batch_id %></td>
+        <td><%= batch.description %></td>
+        <td><%= batch.on_finish %></td>
+        <td><%= batch.on_success %></td>
+        <td><%= batch.on_failure %></td>
+        <td><%= batch.metadata %></td>
+        <td style="text-align: right;"><%= batch.total_jobs %></td>
+        <td style="text-align: right;"><%= batch.completed_jobs %></td>
+        <td style="text-align: right;"><%= batch.failed_jobs %></td>
+        <td style="text-align: right;"><%= batch.enqueued_at %></td>
+        <td style="text-align: right;"><%= batch.finished_at %></td>
+        <td style="text-align: right;"><%= batch.failed_at %></td>
+        <td style="text-align: right;"><%= link_to I18n.t("shared.show"), solid_queue_batch_path(batch) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

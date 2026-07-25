@@ -1,0 +1,10 @@
+<% local_assigns => {batch:} %>
+
+<nav aria-labelledby="solid_queue-batch-navigation" class="solid-taxi--nav solid-taxi--nav--solid_queue-batch-navigation">
+  <h5 id="solid_queue-batch-navigation" class="solid-taxi--sr-only">Solid Queue Batch Navigation</h5>
+  <ul>
+    <li><%= link_to I18n.t("shared.about"), solid_taxi.solid_queue_batch_path(batch), class: class_names("solid-taxi--a", "solid-taxi--a--active": controller.class.to_s.end_with?("::BatchesController")) %></li>
+    <li><%= link_to SolidQueue::BatchExecution.model_name.human(count: 2), solid_taxi.solid_queue_batch_executions_path(batch), class: class_names("solid-taxi--a", "solid-taxi--a--active": controller.class.to_s.end_with?("::ExecutionsController")) %></li>
+  </ul>
+</nav>
+

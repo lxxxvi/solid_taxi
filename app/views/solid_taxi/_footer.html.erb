@@ -1,0 +1,19 @@
+<dl>
+  <dt>rails</dt>
+  <dd><%= SolidTaxi::Rails.version %></dd>
+
+  <% if controller.class.to_s.include?("::SolidCable::") %>
+    <dt>solid_cable</dt>
+    <dd><%= SolidTaxi::SolidCable.version %></dd>
+  <% end %>
+
+  <% if controller.class.to_s.include?("::SolidCache::") %>
+    <dt>solid_cache</dt>
+    <dd><%= SolidTaxi::SolidCache.version %></dd>
+  <% end %>
+
+  <% if controller.class.to_s.include?("::SolidQueue::") %>
+    <dt>solid_queue</dt>
+    <dd><%= SolidTaxi::SolidQueue.version %></dd>
+  <% end %>
+</dl>

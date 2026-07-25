@@ -1,0 +1,13 @@
+<nav aria-labelledby="solid_queue-navigation" class="solid-taxi--nav solid-taxi--nav--solid_queue-navigation">
+  <h3 id="solid_queue-navigation" class="solid-taxi--sr-only"><%= I18n.t("shared.solid_queue_navigation") %></h3>
+  <ul>
+    <% if SolidTaxi::SolidQueue.supports_batches? %>
+      <li><%= link_to SolidQueue::Batch.model_name.human(count: 2), solid_taxi.solid_queue_batches_path, class: class_names("solid-taxi--a", "solid-taxi--a--active": controller.class.to_s.include?("::Batches")) %></li>
+    <% end %>
+    <li><%= link_to SolidQueue::Job.model_name.human(count: 2), solid_taxi.solid_queue_jobs_path, class: class_names("solid-taxi--a", "solid-taxi--a--active": controller.class.to_s.end_with?("::JobsController")) %></li>
+    <li><%= link_to SolidQueue::Pause.model_name.human(count: 2), solid_taxi.solid_queue_pauses_path, class: class_names("solid-taxi--a", "solid-taxi--a--active": controller.class.to_s.end_with?("::PausesController")) %></li>
+    <li><%= link_to SolidQueue::Process.model_name.human(count: 2), solid_taxi.solid_queue_processes_path, class: class_names("solid-taxi--a", "solid-taxi--a--active": controller.class.to_s.end_with?("::ProcessesController")) %></li>
+    <li><%= link_to SolidQueue::RecurringTask.model_name.human(count: 2), solid_taxi.solid_queue_recurring_tasks_path, class: class_names("solid-taxi--a", "solid-taxi--a--active": controller.class.to_s.include?("::RecurringTasks")) %></li>
+    <li><%= link_to SolidQueue::Semaphore.model_name.human(count: 2), solid_taxi.solid_queue_semaphores_path, class: class_names("solid-taxi--a", "solid-taxi--a--active": controller.class.to_s.end_with?("::SemaphoresController")) %></li>
+  </ul>
+</nav>

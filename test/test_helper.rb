@@ -13,3 +13,17 @@ if ActiveSupport::TestCase.respond_to?(:fixture_paths=)
   ActiveSupport::TestCase.file_fixture_path = File.expand_path("fixtures", __dir__) + "/files"
   ActiveSupport::TestCase.fixtures :all
 end
+
+class ActionDispatch::IntegrationTest
+  include SolidTaxi::Engine.routes.url_helpers
+
+  def authenticated_in_dummy_app(password: "8sOfPTT3D4sZzAOhO61vYqUGC0itza9o", &)
+    env_before = ENV.to_h
+
+    ENV["SOLID_TAXI_ADMIN_PASSWORD"] = password
+
+    yield
+  ensure
+    ENV.replace(env_before)
+  end
+end

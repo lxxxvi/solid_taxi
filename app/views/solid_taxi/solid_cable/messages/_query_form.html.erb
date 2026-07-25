@@ -1,0 +1,19 @@
+<% local_assigns[:model] %>
+
+<%= render "solid_taxi/details", open: model.any_queries?, summary: I18n.t("shared.search") do %>
+  <%= form_with(model:, url: url_for, method: :get) do |form| %>
+    <%= fieldset_tag(I18n.t("shared.search"), class: "solid-taxi--fieldset solid-taxi--fieldset--block") do %>
+      <%= render "solid_taxi/form/input", form:, type: :text, attribute: :channel, label: SolidCable::Message.human_attribute_name(:channel), placeholder: I18n.t("shared.binary_field_not_queryable"), disabled: true %>
+      <%= render "solid_taxi/form/input", form:, type: :text, attribute: :payload, label: SolidCable::Message.human_attribute_name(:payload), placeholder: I18n.t("shared.binary_field_not_queryable"), disabled: true %>
+      <%= render "solid_taxi/form/input", form:, type: :number, attribute: :channel_hash, label: SolidCable::Message.human_attribute_name(:channel_hash) %>
+
+      <%= fieldset_tag(SolidCable::Message.human_attribute_name(:created_at), class: "solid-taxi--fieldset solid-taxi--fieldset--inline" ) do %>
+        <%= render "solid_taxi/form/input", form:, type: :datetime, attribute: :created_at_from, label: I18n.t("shared.from"), label_class: "sr-only" %>
+        <%= render "solid_taxi/form/input", form:, type: :datetime, attribute: :created_at_to, label: I18n.t("shared.to"), label_class: "sr-only" %>
+      <% end %>
+    <% end %>
+
+    <%= form.submit I18n.t("shared.search"), name: nil, class: "solid-taxi--input" %>
+    <%= render "solid_taxi/form/reset_link" %>
+  <% end %>
+<% end %>

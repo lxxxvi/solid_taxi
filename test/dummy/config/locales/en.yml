@@ -1,31 +1,133 @@
-# Files in the config/locales directory are used for internationalization and
-# are automatically loaded by Rails. If you want to use locales other than
-# English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more about the API, please read the Rails Internationalization guide
-# at https://guides.rubyonrails.org/i18n.html.
-#
-# Be aware that YAML interprets the following case-insensitive strings as
-# booleans: `true`, `false`, `on`, `off`, `yes`, `no`. Therefore, these strings
-# must be quoted to be interpreted as strings. For example:
-#
-#     en:
-#       "yes": yup
-#       enabled: "ON"
-
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      solid_cable/message:
+        channel: "Channel"
+        channel_hash: "Channel hash"
+        created_at: "Created at"
+        payload: "Payload"
+      solid_cache/entry:
+        byte_size: "Byte size"
+        created_at: "Created at"
+        key: "Key"
+        key_hash: "Key hash"
+        value: "Value"
+      solid_queue/batch:
+        active_job_batch_id: "Active Job Batch ID"
+        completed_jobs: "Completed jobs"
+        description: "Description"
+        enqueued_at: "Enqueued at"
+        failed_at: "Failed at"
+        failed_jobs: "Failed jobs"
+        finished_at: "Finished at"
+        id: "ID"
+        metadata: "Metadata"
+        on_failure: "On failure"
+        on_finish: "On finish"
+        on_success: "On success"
+        total_jobs: "Total jobs"
+      solid_queue/batch_execution:
+        batch_id: "Batch ID"
+        created_at: "Created at"
+        job_id: "Job ID"
+      solid_queue/job:
+        active_job_id: "Active Job ID"
+        arguments: "Arguments"
+        batch_id: "Batch ID"
+        class_name: "Class name"
+        concurrency_key: "Concurrency key"
+        custom__status: "Status"
+        finished_at: "Finished at"
+        id: "ID"
+        priority: "Priority"
+        queue_name: "Queue name"
+        scheduled_at: "Scheduled at"
+      solid_queue/pause:
+        command: "Command"
+        key: "Key"
+        priority: "Priority"
+        queue_name: "Queue name"
+        schedule: "Schedule"
+      solid_queue/process:
+        hostname: "Hostname"
+        kind: "Kind"
+        last_heartbeat_at: "Last heartbeat at"
+        metadata: "Metadata"
+        name: "Name"
+        pid: "PID"
+        supervisor_id: "Supervisor ID"
+      solid_queue/recurring_task:
+        command: "Command"
+        key: "Key"
+        priority: "Priority"
+        queue_name: "Queue name"
+        schedule: "Schedule"
+      solid_queue/recurring_execution:
+        id: "ID"
+        run_at: "Run at"
+        task_key: "Task key"
+      solid_queue/semaphore:
+        expires_at: "Expires at"
+        key: "Key"
+        value: "Value"
+    models:
+      solid_cable/message:
+        one: "Message"
+        other: "Messages"
+      solid_cache/entry:
+        one: "Entry"
+        other: "Entries"
+      solid_queue/batch:
+        one: "Batch"
+        other: "Batches"
+      solid_queue/batch_execution:
+        one: "Batch Execution"
+        other: "Batch Executions"
+      solid_queue/job:
+        one: "Job"
+        other: "Jobs"
+      solid_queue/pause:
+        one: "Pause"
+        other: "Pauses"
+      solid_queue/process:
+        one: "Process"
+        other: "Processes"
+      solid_queue/recurring_task:
+        one: "Recurring Task"
+        other: "Recurring Tasks"
+      solid_queue/recurring_execution:
+        one: "Recurring Execution"
+        other: "Recurring Executions"
+      solid_queue/semaphore:
+        one: "Semaphore"
+        other: "Semaphores"
+  shared:
+    about: "About"
+    binary_field_not_queryable: "Binary field not queryable"
+    from: "From"
+    reset: "Reset"
+    search: "Search"
+    show: "Show"
+    solid_cable_navigation: "Solid Cable Navigation"
+    solid_cache_navigation: "Solid Cache Navigation"
+    solid_queue_navigation: "Solid Queue Navigation"
+    to: "To"
+  pagination:
+    currently_displaying_page_x_of_y: |
+      Currently displaying page %{x} of %{y}
+    first: "First"
+    go: "Go"
+    go_to_page: "Go to page"
+    last: "Last"
+    next: "Next"
+    previous: "Previous"
+  welcome:
+    show:
+      no_solid_stack_found_explanation: |
+        You don't seem to have any of the Solid Stack gems installed.
+      no_solid_stack_found_instructions: |
+        Make sure you either have solid_cable, solid_cache and/or solid_queue installed.
+      no_solid_stack_found_instructions_otherwise: |
+        If you don't want any of these, you can uninstall/remove solid_taxi from your bundle again.
+      this_is_your_solid_stack: "This is your Solid Stack"
+      welcome: "Welcome to Solid Taxi!"

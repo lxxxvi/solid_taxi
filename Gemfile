@@ -1,16 +1,16 @@
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in solid_taxi.gemspec.
 gemspec
 
+gem "minitest-mock"
+gem "propshaft"
 gem "puma"
-
+gem "rubocop-rails-omakase", require: false
+gem "solid_cable"
+gem "solid_cache"
+gem "solid_queue"
 gem "sqlite3"
 
-gem "propshaft"
-
-# Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
-gem "rubocop-rails-omakase", require: false
-
-# Start debugger with binding.b [https://github.com/ruby/debug]
-# gem "debug", ">= 1.0.0"
+group :development do
+  gem "web-console"
+end

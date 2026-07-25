@@ -1,2 +1,12 @@
-#!/usr/bin/env ruby
-exec "./bin/rails", "server", *ARGV
+#!/usr/bin/env sh
+
+if ! gem list foreman -i --silent; then
+  echo "Installing foreman..."
+  gem install foreman
+fi
+
+export PORT="${PORT:-3000}"
+
+export SOLID_TAXI_ADMIN_PASSWORD="8sOfPTT3D4sZzAOhO61vYqUGC0itza9o"
+
+exec foreman start -f Procfile.dev "$@"

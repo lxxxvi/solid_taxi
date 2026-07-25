@@ -1,0 +1,12 @@
+<% local_assigns[:model] %>
+
+<%= render "solid_taxi/details", open: model.any_queries?, summary: I18n.t("shared.search") do %>
+  <%= form_with(model:, url: url_for, method: :get) do |form| %>
+    <%= fieldset_tag(I18n.t("shared.search"), class: "solid-taxi--fieldset solid-taxi--fieldset--block") do %>
+      <%= render "solid_taxi/form/input", form:, type: :text, attribute: :queue_name, label: SolidQueue::Pause.human_attribute_name(:queue_name) %>
+    <% end %>
+
+    <%= form.submit I18n.t("shared.search"), name: nil, class: "solid-taxi--input" %>
+    <%= render "solid_taxi/form/reset_link" %>
+  <% end %>
+<% end %>

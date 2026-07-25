@@ -1,0 +1,156 @@
+successful_batch:
+  active_job_batch_id: ca4759bd-87ba-4d33-b98c-0edf01afd345
+  description: "Successful Batch"
+  on_finish: |
+    {
+      "job_class": "BatchFinishJob",
+      "job_id": "1712860e-83f1-45ad-be20-763113be549f",
+      "provider_job_id": null,
+      "queue_name": "default",
+      "priority": null,
+      "arguments":
+      [],
+      "executions": 0,
+      "exception_executions":
+      {},
+      "locale": "en",
+      "timezone": "UTC",
+      "enqueued_at": "2026-08-01T00:33:32.110785000Z",
+      "scheduled_at": null
+    }
+  on_success: |
+    {
+      "job_class": "BatchSuccessJob",
+      "job_id": "20be9f42-4d8b-400d-a434-3962e0a38ed1",
+      "provider_job_id": null,
+      "queue_name": "default",
+      "priority": null,
+      "arguments":
+      [],
+      "executions": 0,
+      "exception_executions":
+      {},
+      "locale": "en",
+      "timezone": "UTC",
+      "enqueued_at": "2026-08-01T00:33:32.110728000Z",
+      "scheduled_at": null
+    }
+  on_failure: |
+    {
+      "job_class": "BatchFailureJob",
+      "job_id": "ac15fa5f-afc2-4e39-9148-476b2108d11f",
+      "provider_job_id": null,
+      "queue_name": "default",
+      "priority": null,
+      "arguments":
+      [],
+      "executions": 0,
+      "exception_executions":
+      {},
+      "locale": "en",
+      "timezone": "UTC",
+      "enqueued_at": "2026-08-01T00:33:32.110766000Z",
+      "scheduled_at": null
+    }
+  metadata: |
+    {
+      "user_id": 123
+    }
+  total_jobs: 5
+  completed_jobs: 5
+  failed_jobs: 0
+  enqueued_at: '2026-08-01 00:33:32'
+  finished_at: '2026-08-01 00:33:38'
+  failed_at:
+
+failing_batch:
+  active_job_batch_id: 8a7726a5-6329-4e25-8ec8-98c671d424e2
+  description: "Failing Batch"
+  on_finish: |
+    {
+      "job_class": "BatchFinishJob",
+      "job_id": "4b9af79f-f574-4d8b-b386-a0b4b8a66799",
+      "provider_job_id": null,
+      "queue_name": "default",
+      "priority": null,
+      "arguments":
+      [],
+      "executions": 0,
+      "exception_executions":
+      {},
+      "locale": "en",
+      "timezone": "UTC",
+      "enqueued_at": "2026-08-01T00:53:28.280358000Z",
+      "scheduled_at": null
+    }
+  on_success: |
+    {
+      "job_class": "BatchSuccessJob",
+      "job_id": "cc797e69-638c-43ee-9bd0-4b6774864053",
+      "provider_job_id": null,
+      "queue_name": "default",
+      "priority": null,
+      "arguments":
+      [],
+      "executions": 0,
+      "exception_executions":
+      {},
+      "locale": "en",
+      "timezone": "UTC",
+      "enqueued_at": "2026-08-01T00:53:28.280304000Z",
+      "scheduled_at": null
+    }
+  on_failure: |
+    {
+      "job_class": "BatchFailureJob",
+      "job_id": "95072ddc-7541-475b-8f8d-8cf09c208ee1",
+      "provider_job_id": null,
+      "queue_name": "default",
+      "priority": null,
+      "arguments":
+      [],
+      "executions": 0,
+      "exception_executions":
+      {},
+      "locale": "en",
+      "timezone": "UTC",
+      "enqueued_at": "2026-08-01T00:53:28.280341000Z",
+      "scheduled_at": null
+    }
+  metadata: "{}"
+  total_jobs: 2
+  completed_jobs: 1
+  failed_jobs: 1
+  enqueued_at: '2026-08-01 00:53:28'
+  finished_at: '2026-08-01 00:57:01'
+  failed_at: '2026-08-01 00:57:00'
+
+unfinished_batch:
+  active_job_batch_id: def0cdcf-78bc-4e77-83ab-ccaad4205f3f
+  description:
+  on_finish: |
+    {
+      "job_class": "BatchFinishJob",
+      "job_id": "28460053-d939-4b96-9810-114fcf9edadf",
+      "provider_job_id": null,
+      "queue_name": "default",
+      "priority": null,
+      "arguments":
+      [],
+      "executions": 0,
+      "exception_executions":
+      {},
+      "locale": "en",
+      "timezone": "UTC",
+      "enqueued_at": "2026-08-01T00:47:00.294919000Z",
+      "scheduled_at": null
+    }
+  on_success:
+  on_failure:
+  metadata: "{}"
+  total_jobs: 2
+  completed_jobs: 1
+  failed_jobs: 0
+  enqueued_at: '2026-08-01 00:47:00'
+  finished_at:
+  failed_at:

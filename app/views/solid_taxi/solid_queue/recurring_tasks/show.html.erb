@@ -1,0 +1,68 @@
+<%= render "solid_taxi/solid_queue/recurring_tasks/header", recurring_task: @recurring_task %>
+
+<h6><%= I18n.t("shared.about") %></h6>
+
+<table class="solid-taxi--table">
+  <thead>
+    <tr>
+      <th scope="col">Property</th>
+      <th scope="col">Value</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <th scope="row"><%= SolidQueue::RecurringTask.human_attribute_name(:id) %></th>
+      <td><%= @recurring_task.id %></td>
+    </tr>
+
+    <tr>
+      <th scope="row"><%= SolidQueue::RecurringTask.human_attribute_name(:key) %></th>
+      <td><%= @recurring_task.key %></td>
+    </tr>
+
+    <tr>
+      <th scope="row"><%= SolidQueue::RecurringTask.human_attribute_name(:schedule) %></th>
+      <td>
+        <pre><code><%= @recurring_task.schedule %></code></pre>
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row"><%= SolidQueue::RecurringTask.human_attribute_name(:command) %></th>
+      <td>
+        <pre><code><%= @recurring_task.command %></code></pre>
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row"><%= SolidQueue::RecurringTask.human_attribute_name(:class_name) %></th>
+      <td><%= @recurring_task.class_name %></td>
+    </tr>
+
+    <tr>
+      <th scope="row"><%= SolidQueue::RecurringTask.human_attribute_name(:arguments) %></th>
+      <td><%= @recurring_task.arguments %></td>
+    </tr>
+
+    <tr>
+      <th scope="row"><%= SolidQueue::RecurringTask.human_attribute_name(:queue_name) %></th>
+      <td><%= @recurring_task.queue_name %></td>
+    </tr>
+
+    <tr>
+      <th scope="row"><%= SolidQueue::RecurringTask.human_attribute_name(:priority) %></th>
+      <td><%= @recurring_task.priority %></td>
+    </tr>
+
+    <tr>
+      <th scope="row"><%= SolidQueue::RecurringTask.human_attribute_name(:static) %></th>
+      <td><%= @recurring_task.static %></td>
+    </tr>
+
+    <tr>
+      <th scope="row"><%= SolidQueue::RecurringTask.human_attribute_name(:description) %></th>
+      <td><%= @recurring_task.description %></td>
+    </tr>
+  </tbody>
+</table>

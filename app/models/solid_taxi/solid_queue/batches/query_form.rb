@@ -1,0 +1,23 @@
+class SolidTaxi::SolidQueue::Batches::QueryForm < SolidTaxi::QueryForm
+  form_fields(
+    :id,
+    :active_job_batch_id,
+    :description,
+    :on_finish,
+    :on_success,
+    :on_failure,
+    :metadata,
+    :total_jobs_from,
+    :total_jobs_to,
+    :completed_jobs_from,
+    :completed_jobs_to,
+    :failed_jobs_from,
+    :failed_jobs_to,
+    :enqueued_at_from,
+    :enqueued_at_to,
+    :finished_at_from,
+    :finished_at_to,
+    :failed_at_from,
+    :failed_at_to
+  )
+end

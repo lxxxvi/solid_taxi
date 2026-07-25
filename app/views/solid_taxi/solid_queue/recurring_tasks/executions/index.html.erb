@@ -1,0 +1,51 @@
+<%= render "solid_taxi/solid_queue/recurring_tasks/header", recurring_task: @page.recurring_task %>
+
+<h6><%= SolidQueue::RecurringExecution.model_name.human(count: 2) %></h6>
+
+<%= render "query_form", model: @page.query_form %>
+
+<%= render "solid_taxi/pagination", pagination: @page.pagination %>
+
+<table class="solid-taxi--table">
+  <thead>
+    <tr>
+      <th colspan="3"><%= SolidQueue::RecurringExecution.model_name.human %></th>
+      <th colspan="10"><%= SolidQueue::Job.model_name.human %></th>
+    </tr>
+    <tr>
+      <th style="text-align: right;"><%= SolidQueue::RecurringExecution.human_attribute_name(:id) %></th>
+      <th><%= SolidQueue::RecurringExecution.human_attribute_name(:task_key) %></th>
+      <th style="text-align: right;"><%= SolidQueue::RecurringExecution.human_attribute_name(:run_at) %></th>
+      <th style="text-align: right;"><%= SolidQueue::Job.human_attribute_name(:id) %></th>
+      <th><%= SolidQueue::Job.human_attribute_name(:queue_name) %></th>
+      <th><%= SolidQueue::Job.human_attribute_name(:class_name) %></th>
+      <th><%= SolidQueue::Job.human_attribute_name(:arguments) %></th>
+      <th style="text-align: right;"><%= SolidQueue::Job.human_attribute_name(:priority) %></th>
+      <th><%= SolidQueue::Job.human_attribute_name(:active_job_id) %></th>
+      <th style="text-align: right;"><%= SolidQueue::Job.human_attribute_name(:scheduled_at) %></th>
+      <th style="text-align: right;"><%= SolidQueue::Job.human_attribute_name(:finished_at) %></th>
+      <th><%= SolidQueue::Job.human_attribute_name(:concurrency_key) %></th>
+      <th><%= SolidQueue::Job.human_attribute_name(:custom__status) %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @page.query.rows.each do |recurring_execution| %>
+      <tr>
+        <td style="text-align: right;"><%= recurring_execution.id %></td>
+        <td><%= recurring_execution.task_key %></td>
+        <td style="text-align: right;"><%= recurring_execution.run_at %></td>
+        <td style="text-align: right;"><%= recurring_execution.job.id %></td>
+        <td><%= recurring_execution.job.queue_name %></td>
+        <td><%= recurring_execution.job.class_name %></td>
+        <td><%= recurring_execution.job.arguments %></td>
+        <td style="text-align: right;"><%= recurring_execution.job.priority %></td>
+        <td><%= recurring_execution.job.active_job_id %></td>
+        <td style="text-align: right;"><%= recurring_execution.job.scheduled_at %></td>
+        <td style="text-align: right;"><%= recurring_execution.job.finished_at %></td>
+        <td><%= recurring_execution.job.concurrency_key %></td>
+        <td><%= recurring_execution.job.status %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

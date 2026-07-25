@@ -1,0 +1,37 @@
+<h2>Solid Taxi</h2>
+
+<p><%= I18n.t(".welcome.show.welcome") %></p>
+
+<% if SolidTaxi::SolidCable.present? || SolidTaxi::SolidCache.present? || SolidTaxi::SolidQueue.present? %>
+  <p><%= I18n.t(".welcome.show.this_is_your_solid_stack") %></p>
+
+  <ul>
+    <% if SolidTaxi::SolidCable.present? %>
+      <li>
+        <%= link_to solid_cable_root_path do %>
+          Solid Cable (<%= SolidTaxi::SolidCable.version %>)
+        <% end %>
+      </li>
+    <% end %>
+
+    <% if SolidTaxi::SolidCache.present? %>
+      <li>
+        <%= link_to solid_cache_root_path do %>
+          Solid Cache (<%= SolidTaxi::SolidCache.version %>)
+        <% end %>
+      </li>
+    <% end %>
+
+    <% if SolidTaxi::SolidQueue.present? %>
+      <li>
+        <%= link_to solid_queue_root_path do %>
+          Solid Queue (<%= SolidTaxi::SolidQueue.version %>)
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p><%= I18n.t("welcome.show.no_solid_stack_found_explanation") %></p>
+  <p><%= I18n.t("welcome.show.no_solid_stack_found_instructions") %></p>
+  <p><%= I18n.t("welcome.show.no_solid_stack_found_instructions_otherwise") %></p>
+<% end %>

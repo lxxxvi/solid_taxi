@@ -1,0 +1,660 @@
+# recurring
+
+recurring_solid_queue_recurring_job_on_2026_08_01_at_00_42_00:
+  queue_name: solid_queue_recurring
+  class_name: SolidQueue::RecurringJob
+  arguments: |
+    {
+      "job_class": "SolidQueue::RecurringJob",
+      "job_id": "69ff590b-9071-468c-bb50-411216fcf467",
+      "provider_job_id": null,
+      "queue_name": "solid_queue_recurring",
+      "priority": null,
+      "arguments":
+      [
+        "SecureRandom.uuid"
+      ],
+      "executions": 0,
+      "exception_executions":
+      {},
+      "locale": "en",
+      "timezone": "UTC",
+      "enqueued_at": "2026-08-01T00:42:00.052722000Z",
+      "scheduled_at": "2026-08-01T00:42:00.052643000Z"
+    }
+  priority: 0
+  active_job_id: 69ff590b-9071-468c-bb50-411216fcf467
+  scheduled_at: '2026-08-01T00:42:00.052643000Z'
+  finished_at: '2026-08-01T00:42:01.018065000Z'
+  concurrency_key:
+  batch_id:
+
+recurring_solid_queue_recurring_job_on_2026_08_01_at_00_43_00:
+  queue_name: solid_queue_recurring
+  class_name: SolidQueue::RecurringJob
+  arguments: |
+    {
+      "job_class": "SolidQueue::RecurringJob",
+      "job_id": "c27295d6-bfc6-4396-ad3f-d496ee1fdce6",
+      "provider_job_id": null,
+      "queue_name": "solid_queue_recurring",
+      "priority": null,
+      "arguments":
+      [
+        "SecureRandom.uuid"
+      ],
+      "executions": 0,
+      "exception_executions":
+      {},
+      "locale": "en",
+      "timezone": "UTC",
+      "enqueued_at": "2026-08-01T00:43:00.023214000Z",
+      "scheduled_at": "2026-08-01T00:43:00.022920000Z"
+    }
+  priority: 0
+  active_job_id: c27295d6-bfc6-4396-ad3f-d496ee1fdce6
+  scheduled_at: '2026-08-01T00:43:00.022920000Z'
+  finished_at: '2026-08-01T00:43:00.107842000Z'
+  concurrency_key:
+  batch_id:
+
+recurring_solid_queue_recurring_job_on_2026_08_01_at_00_44_00:
+  queue_name: solid_queue_recurring
+  class_name: SolidQueue::RecurringJob
+  arguments: |
+    {
+      "job_class": "SolidQueue::RecurringJob",
+      "job_id": "0a72cd4d-5bfd-46f3-8fe2-1d81ec08c2af",
+      "provider_job_id": null,
+      "queue_name": "solid_queue_recurring",
+      "priority": null,
+      "arguments":
+      [
+        "SecureRandom.uuid"
+      ],
+      "executions": 0,
+      "exception_executions":
+      {},
+      "locale": "en",
+      "timezone": "UTC",
+      "enqueued_at": "2026-08-01T00:44:00.025333000Z",
+      "scheduled_at": "2026-08-01T00:44:00.025262000Z"
+    }
+  priority: 0
+  active_job_id: 0a72cd4d-5bfd-46f3-8fe2-1d81ec08c2af
+  scheduled_at: '2026-08-01T00:44:00.025262000Z'
+  finished_at: '2026-08-01T00:44:00.230964000Z'
+  concurrency_key:
+  batch_id:
+
+recurring_solid_queue_recurring_job_on_2026_08_01_at_00_45_00:
+  queue_name: solid_queue_recurring
+  class_name: SolidQueue::RecurringJob
+  arguments: |
+    {
+      "job_class": "SolidQueue::RecurringJob",
+      "job_id": "08031250-3df4-49f2-a45c-8634b4b2698a",
+      "provider_job_id": null,
+      "queue_name": "solid_queue_recurring",
+      "priority": null,
+      "arguments":
+      [
+        "SecureRandom.uuid"
+      ],
+      "executions": 0,
+      "exception_executions":
+      {},
+      "locale": "en",
+      "timezone": "UTC",
+      "enqueued_at": "2026-08-01T00:45:00.013264000Z",
+      "scheduled_at": "2026-08-01T00:45:00.013106000Z"
+    }
+  priority: 0
+  active_job_id: '08031250-3df4-49f2-a45c-8634b4b2698a'
+  scheduled_at: '2026-08-01T00:45:00.013106000Z'
+  finished_at: '2026-08-01T00:45:00.373739000Z'
+  concurrency_key:
+  batch_id:
+
+recurring_solid_queue_recurring_job_on_2026_08_01_at_00_46_00:
+  queue_name: solid_queue_recurring
+  class_name: SolidQueue::RecurringJob
+  arguments: |
+    {
+      "job_class": "SolidQueue::RecurringJob",
+      "job_id": "ad081f9d-276e-4b82-9f14-fc46efa0e3af",
+      "provider_job_id": null,
+      "queue_name": "solid_queue_recurring",
+      "priority": null,
+      "arguments":
+      [
+        "SecureRandom.uuid"
+      ],
+      "executions": 0,
+      "exception_executions":
+      {},
+      "locale": "en",
+      "timezone": "UTC",
+      "enqueued_at": "2026-08-01T00:46:00.023476000Z",
+      "scheduled_at": "2026-08-01T00:46:00.023411000Z"
+    }
+  priority: 0
+  active_job_id: ad081f9d-276e-4b82-9f14-fc46efa0e3af
+  scheduled_at: '2026-08-01T00:46:00.023411000Z'
+  finished_at: '2026-08-01T00:46:00.513976000Z'
+  concurrency_key:
+  batch_id:
+
+recurring_semaphory_job_on_on_2026_08_01_at_00_51_00:
+  queue_name: default
+  class_name: SemaphoryJob
+  arguments: |
+    {
+      "job_class": "SemaphoryJob",
+      "job_id": "23aa6cc5-8e26-4bc9-939b-9e522434fc09",
+      "provider_job_id": null,
+      "queue_name": "default",
+      "priority": null,
+      "arguments":
+      [],
+      "executions": 0,
+      "exception_executions":
+      {},
+      "locale": "en",
+      "timezone": "UTC",
+      "enqueued_at": "2026-08-01T00:51:00.040429000Z",
+      "scheduled_at": "2026-08-01T00:51:00.040310000Z"
+    }
+  active_job_id: 23aa6cc5-8e26-4bc9-939b-9e522434fc09
+  scheduled_at: '2026-08-01T00:51:00.040310000Z'
+  finished_at: '2026-08-01T00:52:55.181971000Z'
+  concurrency_key: SemaphoryJob/semaphory_job
+  batch_id:
+
+recurring_semaphory_job_on_on_2026_08_01_at_00_52_00:
+  queue_name: default
+  class_name: SemaphoryJob
+  arguments: |
+    {
+      "job_class": "SemaphoryJob",
+      "job_id": "d04fdcb7-1238-405c-b21a-3fb001f3b33a",
+      "provider_job_id": null,
+      "queue_name": "default",
+      "priority": null,
+      "arguments":
+      [],
+      "executions": 0,
+      "exception_executions":
+      {},
+      "locale": "en",
+      "timezone": "UTC",
+      "enqueued_at": "2026-08-01T00:52:00.047449000Z",
+      "scheduled_at": "2026-08-01T00:52:00.047340000Z"
+    }
+  active_job_id: d04fdcb7-1238-405c-b21a-3fb001f3b33a
+  scheduled_at: '2026-08-01T00:52:00.047340000Z'
+  finished_at:
+  concurrency_key: SemaphoryJob/semaphory_job
+  batch_id:
+
+recurring_semaphory_job_on_on_2026_08_01_at_00_53_00:
+  queue_name: default
+  class_name: SemaphoryJob
+  arguments: |
+    {
+      "job_class": "SemaphoryJob",
+      "job_id": "a64595c9-4d46-46df-85e5-73aae8b31afd",
+      "provider_job_id": null,
+      "queue_name": "default",
+      "priority": null,
+      "arguments":
+      [],
+      "executions": 0,
+      "exception_executions":
+      {},
+      "locale": "en",
+      "timezone": "UTC",
+      "enqueued_at": "2026-08-01T00:53:00.015366000Z",
+      "scheduled_at": "2026-08-01T00:53:00.015153000Z"
+    }
+  active_job_id: a64595c9-4d46-46df-85e5-73aae8b31afd
+  scheduled_at: '2026-08-01T00:53:00.015153000Z'
+  finished_at:
+  concurrency_key: SemaphoryJob/semaphory_job
+  batch_id:
+
+recurring_sleepy_job_on_2026_08_01_at_00_42_00:
+  queue_name: default
+  class_name: SleepyJob
+  arguments: |
+    {
+      "job_class": "SleepyJob",
+      "job_id": "63e0af7a-3e43-4b54-b26c-9136a35838ab",
+      "provider_job_id": null,
+      "queue_name": "default",
+      "priority": null,
+      "arguments":
+      [],
+      "executions": 0,
+      "exception_executions":
+      {},
+      "locale": "en",
+      "timezone": "UTC",
+      "enqueued_at": "2026-08-01T00:42:00.050132000Z",
+      "scheduled_at": "2026-08-01T00:42:00.049886000Z"
+    }
+  active_job_id: 63e0af7a-3e43-4b54-b26c-9136a35838ab
+  scheduled_at: '2026-08-01T00:42:00.049886000Z'
+  finished_at: '2026-08-01T00:42:46.022651000Z'
+  concurrency_key:
+  batch_id:
+
+recurring_sleepy_job_on_2026_08_01_at_00_43_00:
+  queue_name: default
+  class_name: SleepyJob
+  arguments: |
+    {
+      "job_class": "SleepyJob",
+      "job_id": "cca05da3-b4fd-45f2-8ed6-aec621472072",
+      "provider_job_id": null,
+      "queue_name": "default",
+      "priority": null,
+      "arguments":
+      [],
+      "executions": 0,
+      "exception_executions":
+      {},
+      "locale": "en",
+      "timezone": "UTC",
+      "enqueued_at": "2026-08-01T00:43:00.031240000Z",
+      "scheduled_at": "2026-08-01T00:43:00.031165000Z"
+    }
+  active_job_id: cca05da3-b4fd-45f2-8ed6-aec621472072
+  scheduled_at: '2026-08-01T00:43:00.031165000Z'
+  finished_at: '2026-08-01T00:43:45.125336000Z'
+  concurrency_key:
+  batch_id:
+
+# Batch
+
+batch_successful_batch_sleepy_job_0:
+  queue_name: default
+  class_name: SleepyJob
+  arguments: |
+    {
+      "job_class": "SleepyJob",
+      "job_id": "44fef590-c93f-47a3-a4d2-d16d8569e6b2",
+      "provider_job_id": null,
+      "queue_name": "default",
+      "priority": null,
+      "arguments":
+      [
+        0
+      ],
+      "executions": 0,
+      "exception_executions":
+      {},
+      "locale": "en",
+      "timezone": "UTC",
+      "enqueued_at": "2026-08-01T00:33:32.115434000Z",
+      "scheduled_at": "2026-08-01T00:33:32.115404000Z",
+      "batch_id": <%= ActiveRecord::FixtureSet.identify(:successful_batch) %>
+    }
+  priority: 0
+  active_job_id: 44fef590-c93f-47a3-a4d2-d16d8569e6b2
+  scheduled_at: '2026-08-01T00:33:32.115404000Z'
+  finished_at: '2026-08-01T00:33:33.060033000Z'
+  concurrency_key:
+  batch: successful_batch
+
+batch_successful_batch_sleepy_job_1:
+  queue_name: default
+  class_name: SleepyJob
+  arguments: |
+    {
+      "job_class": "SleepyJob",
+      "job_id": "18361543-3296-4430-97f5-4b03c5fbcfc6",
+      "provider_job_id": null,
+      "queue_name": "default",
+      "priority": null,
+      "arguments":
+      [
+        1
+      ],
+      "executions": 0,
+      "exception_executions":
+      {},
+      "locale": "en",
+      "timezone": "UTC",
+      "enqueued_at": "2026-08-01T00:33:32.135014000Z",
+      "scheduled_at": "2026-08-01T00:33:32.134998000Z",
+      "batch_id": <%= ActiveRecord::FixtureSet.identify(:successful_batch) %>
+    }
+  priority: 0
+  active_job_id: 18361543-3296-4430-97f5-4b03c5fbcfc6
+  scheduled_at: '2026-08-01T00:33:32.134998000Z'
+  finished_at: '2026-08-01T00:33:34.070142000Z'
+  concurrency_key:
+  batch: successful_batch
+
+batch_successful_batch_sleepy_job_2:
+  queue_name: default
+  class_name: SleepyJob
+  arguments: |
+    {
+      "job_class": "SleepyJob",
+      "job_id": "173d8cb8-f12a-4fc8-9d08-0eb42be2e153",
+      "provider_job_id": null,
+      "queue_name": "default",
+      "priority": null,
+      "arguments":
+      [
+        2
+      ],
+      "executions": 0,
+      "exception_executions":
+      {},
+      "locale": "en",
+      "timezone": "UTC",
+      "enqueued_at": "2026-08-01T00:33:32.136452000Z",
+      "scheduled_at": "2026-08-01T00:33:32.136441000Z",
+      "batch_id": <%= ActiveRecord::FixtureSet.identify(:successful_batch) %>
+    }
+  priority: 0
+  active_job_id: 173d8cb8-f12a-4fc8-9d08-0eb42be2e153
+  scheduled_at: '2026-08-01T00:33:32.136441000Z'
+  finished_at: '2026-08-01T00:33:35.070073000Z'
+  concurrency_key:
+  batch: successful_batch
+
+batch_successful_batch_sleepy_job_3:
+  queue_name: default
+  class_name: SleepyJob
+  arguments: |
+    {
+      "job_class": "SleepyJob",
+      "job_id": "d4225cd7-d4cb-4655-9fa1-8e03d0c2850d",
+      "provider_job_id": null,
+      "queue_name": "default",
+      "priority": null,
+      "arguments":
+      [
+        3
+      ],
+      "executions": 0,
+      "exception_executions":
+      {},
+      "locale": "en",
+      "timezone": "UTC",
+      "enqueued_at": "2026-08-01T00:33:32.137749000Z",
+      "scheduled_at": "2026-08-01T00:33:32.137739000Z",
+      "batch_id": <%= ActiveRecord::FixtureSet.identify(:successful_batch) %>
+    }
+  priority: 0
+  active_job_id: d4225cd7-d4cb-4655-9fa1-8e03d0c2850d
+  scheduled_at: '2026-08-01T00:33:32.137739000Z'
+  finished_at: '2026-08-01T00:33:36.091739000Z'
+  concurrency_key:
+  batch: successful_batch
+
+batch_successful_batch_sleepy_job_4:
+  queue_name: default
+  class_name: SleepyJob
+  arguments: |
+    {
+      "job_class": "SleepyJob",
+      "job_id": "e6bf85aa-545a-402c-8bed-79d200119dc7",
+      "provider_job_id": null,
+      "queue_name": "default",
+      "priority": null,
+      "arguments":
+      [
+        4
+      ],
+      "executions": 0,
+      "exception_executions":
+      {},
+      "locale": "en",
+      "timezone": "UTC",
+      "enqueued_at": "2026-08-01T00:33:32.139003000Z",
+      "scheduled_at": "2026-08-01T00:33:32.138993000Z",
+      "batch_id": <%= ActiveRecord::FixtureSet.identify(:successful_batch) %>
+    }
+  priority: 0
+  active_job_id: e6bf85aa-545a-402c-8bed-79d200119dc7
+  scheduled_at: '2026-08-01T00:33:32.138993000Z'
+  finished_at: '2026-08-01T00:33:38.107397000Z'
+  concurrency_key:
+  batch: successful_batch
+
+batch_successful_batch_batch_success_job:
+  queue_name: default
+  class_name: BatchSuccessJob
+  arguments: |
+    {
+      "job_class": "BatchSuccessJob",
+      "job_id": "20be9f42-4d8b-400d-a434-3962e0a38ed1",
+      "provider_job_id": null,
+      "queue_name": "default",
+      "priority": null,
+      "arguments":
+      [],
+      "executions": 0,
+      "exception_executions":
+      {},
+      "locale": "en",
+      "timezone": "UTC",
+      "enqueued_at": "2026-08-01T00:33:38.138963000Z",
+      "scheduled_at": "2026-08-01T00:33:38.138882000Z",
+      "callback_batch_id": <%= ActiveRecord::FixtureSet.identify(:successful_batch) %>
+    }
+  priority: 0
+  active_job_id: 20be9f42-4d8b-400d-a434-3962e0a38ed1
+  scheduled_at: '2026-08-01T00:33:38.138882000Z'
+  finished_at: '2026-08-01T00:33:38.172982000Z'
+  concurrency_key:
+  batch_id:
+
+batch_successful_batch_batch_finish_job:
+  queue_name: default
+  class_name: BatchFinishJob
+  arguments: |
+    {
+      "job_class": "BatchFinishJob",
+      "job_id": "1712860e-83f1-45ad-be20-763113be549f",
+      "provider_job_id": null,
+      "queue_name": "default",
+      "priority": null,
+      "arguments":
+      [],
+      "executions": 0,
+      "exception_executions":
+      {},
+      "locale": "en",
+      "timezone": "UTC",
+      "enqueued_at": "2026-08-01T00:33:38.150718000Z",
+      "scheduled_at": "2026-08-01T00:33:38.150693000Z",
+      "callback_batch_id": <%= ActiveRecord::FixtureSet.identify(:successful_batch) %>
+    }
+  priority: 0
+  active_job_id: 1712860e-83f1-45ad-be20-763113be549f
+  scheduled_at: '2026-08-01T00:33:38.150693000Z'
+  finished_at: '2026-08-01T00:33:38.177848000Z'
+  concurrency_key:
+  batch_id:
+
+batch_failing_sleepy_job:
+  queue_name: default
+  class_name: SleepyJob
+  arguments: |
+    {
+      "job_class": "SleepyJob",
+      "job_id": "aa2c33d8-cc88-4dd9-8ca7-3744e0c9ee56",
+      "provider_job_id": null,
+      "queue_name": "default",
+      "priority": null,
+      "arguments":
+      [
+        1
+      ],
+      "executions": 0,
+      "exception_executions":
+      {},
+      "locale": "en",
+      "timezone": "UTC",
+      "enqueued_at": "2026-08-01T00:53:28.300057000Z",
+      "scheduled_at": "2026-08-01T00:53:28.300008000Z",
+      "batch_id": <%= ActiveRecord::FixtureSet.identify(:failing_batch) %>
+    }
+  priority: 0
+  active_job_id: aa2c33d8-cc88-4dd9-8ca7-3744e0c9ee56
+  scheduled_at: '2026-08-01T00:53:28.300008000Z'
+  finished_at: '2026-08-01T00:57:01.058111000Z'
+  concurrency_key:
+  batch: failing_batch
+
+batch_failing_crash_job:
+  queue_name: default
+  class_name: CrashJob
+  arguments: |
+    {
+      "job_class": "CrashJob",
+      "job_id": "a9044272-be19-4891-9ae6-f95d1b7922d3",
+      "provider_job_id": null,
+      "queue_name": "default",
+      "priority": null,
+      "arguments":
+      [
+        1
+      ],
+      "executions": 0,
+      "exception_executions":
+      {},
+      "locale": "en",
+      "timezone": "UTC",
+      "enqueued_at": "2026-08-01T00:53:28.326846000Z",
+      "scheduled_at": "2026-08-01T00:53:28.326818000Z",
+      "batch_id": <%= ActiveRecord::FixtureSet.identify(:failing_batch) %>
+    }
+  priority: 0
+  active_job_id: a9044272-be19-4891-9ae6-f95d1b7922d3
+  scheduled_at: '2026-08-01T00:53:28.326818000Z'
+  finished_at:
+  concurrency_key:
+  batch: failing_batch
+
+batch_failing_batch_failure_job:
+  queue_name: default
+  class_name: BatchFailureJob
+  arguments: |
+    {
+      "job_class": "BatchFailureJob",
+      "job_id": "95072ddc-7541-475b-8f8d-8cf09c208ee1",
+      "provider_job_id": null,
+      "queue_name": "default",
+      "priority": null,
+      "arguments":
+      [],
+      "executions": 0,
+      "exception_executions":
+      {},
+      "locale": "en",
+      "timezone": "UTC",
+      "enqueued_at": "2026-08-01T00:57:01.070085000Z",
+      "scheduled_at": "2026-08-01T00:57:01.070057000Z",
+      "callback_batch_id": <%= ActiveRecord::FixtureSet.identify(:failing_batch) %>
+    }
+  priority: 0
+  active_job_id: 95072ddc-7541-475b-8f8d-8cf09c208ee1
+  scheduled_at: '2026-08-01T00:57:01.070057000Z'
+  finished_at: '2026-08-01T00:57:01.094643000Z'
+  concurrency_key:
+  batch_id:
+
+batch_failing_batch_finish_job:
+  queue_name: default
+  class_name: BatchFinishJob
+  arguments: |
+    {
+      "job_class": "BatchFinishJob",
+      "job_id": "4b9af79f-f574-4d8b-b386-a0b4b8a66799",
+      "provider_job_id": null,
+      "queue_name": "default",
+      "priority": null,
+      "arguments":
+      [],
+      "executions": 0,
+      "exception_executions":
+      {},
+      "locale": "en",
+      "timezone": "UTC",
+      "enqueued_at": "2026-08-01T00:57:01.079064000Z",
+      "scheduled_at": "2026-08-01T00:57:01.079050000Z",
+      "callback_batch_id": <%= ActiveRecord::FixtureSet.identify(:failing_batch) %>
+    }
+  priority: 0
+  active_job_id: 4b9af79f-f574-4d8b-b386-a0b4b8a66799
+  scheduled_at: '2026-08-01T00:57:01.079050000Z'
+  finished_at: '2026-08-01T00:57:01.098248000Z'
+  concurrency_key:
+  batch_id:
+
+unfinished_batch_sleepy_job_1:
+  queue_name: default
+  class_name: SleepyJob
+  arguments: |
+    {
+      "job_class": "SleepyJob",
+      "job_id": "39edab2b-e089-4ca4-8218-89bf40a2d89e",
+      "provider_job_id": null,
+      "queue_name": "default",
+      "priority": null,
+      "arguments":
+      [
+        5
+      ],
+      "executions": 0,
+      "exception_executions":
+      {},
+      "locale": "en",
+      "timezone": "UTC",
+      "enqueued_at": "2026-08-01T00:47:00.299687000Z",
+      "scheduled_at": "2026-08-01T00:47:00.299659000Z",
+      "batch_id": <%= ActiveRecord::FixtureSet.identify(:failing_batch) %>
+    }
+  priority: 0
+  active_job_id: 39edab2b-e089-4ca4-8218-89bf40a2d89e
+  scheduled_at: '2026-08-01 00:47:00'
+  finished_at: '2026-08-01 00:47:00'
+  concurrency_key:
+  batch: unfinished_batch
+
+unfinished_batch_sleepy_job_2:
+  queue_name: default
+  class_name: SleepyJob
+  arguments: |
+    {
+      "job_class": "SleepyJob",
+      "job_id": "9f4dacc7-4610-497f-9c31-9e43abc37d63",
+      "provider_job_id": null,
+      "queue_name": "default",
+      "priority": null,
+      "arguments":
+      [
+        10
+      ],
+      "executions": 0,
+      "exception_executions":
+      {},
+      "locale": "en",
+      "timezone": "UTC",
+      "enqueued_at": "2026-08-01T00:47:00.319114000Z",
+      "scheduled_at": "2026-08-01T00:47:00.319096000Z",
+      "batch_id": <%= ActiveRecord::FixtureSet.identify(:unfinished_batch) %>
+    }
+  priority: 0
+  active_job_id: 9f4dacc7-4610-497f-9c31-9e43abc37d63
+  scheduled_at: '2026-08-01 00:47:00'
+  finished_at:
+  concurrency_key:
+  batch: unfinished_batch

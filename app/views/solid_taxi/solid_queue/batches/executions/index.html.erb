@@ -1,0 +1,41 @@
+<%= render "solid_taxi/solid_queue/batches/header", batch: @page.batch %>
+
+<h6><%= SolidQueue::BatchExecution.model_name.human(count: 2) %></h6>
+
+<%= render "query_form", model: @page.query_form %>
+
+<%= render "solid_taxi/pagination", pagination: @page.pagination %>
+
+<table class="solid-taxi--table">
+  <thead>
+    <tr>
+      <th style="text-align: right;"><%= SolidQueue::BatchExecution.human_attribute_name(:job_id) %></th>
+      <th><%= SolidQueue::Job.human_attribute_name(:queue_name) %></th>
+      <th><%= SolidQueue::Job.human_attribute_name(:class_name) %></th>
+      <th><%= SolidQueue::Job.human_attribute_name(:arguments) %></th>
+      <th style="text-align: right;"><%= SolidQueue::Job.human_attribute_name(:priority) %></th>
+      <th><%= SolidQueue::Job.human_attribute_name(:active_job_id) %></th>
+      <th style="text-align: right;"><%= SolidQueue::Job.human_attribute_name(:scheduled_at) %></th>
+      <th style="text-align: right;"><%= SolidQueue::Job.human_attribute_name(:finished_at) %></th>
+      <th><%= SolidQueue::Job.human_attribute_name(:concurrency_key) %></th>
+      <th><%= SolidQueue::Job.human_attribute_name(:custom__status) %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @page.query.rows.each do |batch_execution| %>
+      <tr>
+        <td style="text-align: right;"><%= batch_execution.job.id %></td>
+        <td><%= batch_execution.job.queue_name %></td>
+        <td><%= batch_execution.job.class_name %></td>
+        <td><%= batch_execution.job.arguments %></td>
+        <td style="text-align: right;"><%= batch_execution.job.priority %></td>
+        <td><%= batch_execution.job.active_job_id %></td>
+        <td style="text-align: right;"><%= batch_execution.job.scheduled_at %></td>
+        <td style="text-align: right;"><%= batch_execution.job.finished_at %></td>
+        <td><%= batch_execution.job.concurrency_key %></td>
+        <td><%= batch_execution.job.status %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

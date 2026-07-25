@@ -1,0 +1,19 @@
+<% if SolidTaxi::SolidCable.present? || SolidTaxi::SolidCache.present? || SolidTaxi::SolidQueue.present? %>
+  <nav aria-labelledby="primary-navigation" class="solid-taxi--nav solid-taxi--nav--primary-navigation">
+    <h1 id="primary-navigation" class="solid-taxi--sr-only">Solid Taxi navigation</h1>
+
+    <ul>
+      <% if SolidTaxi::SolidCable.present? %>
+        <li><%= link_to "Solid Cable", solid_cable_root_path, class: class_names("solid-taxi--a", "solid-taxi--a--active": controller.class.to_s.include?("::SolidCable::")) %></li>
+      <% end %>
+
+      <% if SolidTaxi::SolidCache.present? %>
+        <li><%= link_to "Solid Cache", solid_cache_root_path, class: class_names("solid-taxi--a", "solid-taxi--a--active": controller.class.to_s.include?("::SolidCache::")) %></li>
+      <% end %>
+
+      <% if SolidTaxi::SolidQueue.present? %>
+        <li><%= link_to "Solid Queue", solid_queue_root_path, class: class_names("solid-taxi--a", "solid-taxi--a--active": controller.class.to_s.include?("::SolidQueue::")) %></li>
+      <% end %>
+    </ul>
+  </nav>
+<% end %>

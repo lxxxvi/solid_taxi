@@ -1,0 +1,5 @@
+<%= render "solid_taxi/solid_queue/header" %>
+
+<h4><%= SolidQueue::RecurringTask.model_name.human %></h4>
+
+<%= render "solid_taxi/solid_queue/recurring_tasks/recurring_task_navigation", recurring_task: recurring_task %>

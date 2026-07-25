@@ -1,0 +1,48 @@
+<% local_assigns[:model] %>
+
+<%= render "solid_taxi/details", open: model.any_queries?, summary: I18n.t("shared.search") do %>
+  <%= form_with(model:, url: url_for, method: :get) do |form| %>
+    <%= fieldset_tag(I18n.t("shared.search"), class: "solid-taxi--fieldset solid-taxi--fieldset--block") do %>
+      <%= render "solid_taxi/form/input", form:, type: :number, attribute: :id, label: SolidQueue::Batch.human_attribute_name(:id) %>
+      <%= render "solid_taxi/form/input", form:, type: :text, attribute: :active_job_batch_id, label: SolidQueue::Batch.human_attribute_name(:active_job_batch_id) %>
+      <%= render "solid_taxi/form/input", form:, type: :text, attribute: :description, label: SolidQueue::Batch.human_attribute_name(:description) %>
+      <%= render "solid_taxi/form/input", form:, type: :text, attribute: :on_finish, label: SolidQueue::Batch.human_attribute_name(:on_finish) %>
+      <%= render "solid_taxi/form/input", form:, type: :text, attribute: :on_success, label: SolidQueue::Batch.human_attribute_name(:on_success) %>
+      <%= render "solid_taxi/form/input", form:, type: :text, attribute: :on_failure, label: SolidQueue::Batch.human_attribute_name(:on_failure) %>
+      <%= render "solid_taxi/form/input", form:, type: :text, attribute: :metadata, label: SolidQueue::Batch.human_attribute_name(:metadata) %>
+
+      <%= fieldset_tag(SolidQueue::Job.human_attribute_name(:total_jobs), class: "solid-taxi--fieldset solid-taxi--fieldset--inline" ) do %>
+        <%= render "solid_taxi/form/input", form:, type: :number, attribute: :total_jobs_from, label: I18n.t("shared.from"), label_class: "sr-only" %>
+        <%= render "solid_taxi/form/input", form:, type: :number, attribute: :total_jobs_to, label: I18n.t("shared.to"), label_class: "sr-only" %>
+      <% end %>
+
+      <%= fieldset_tag(SolidQueue::Job.human_attribute_name(:completed_jobs), class: "solid-taxi--fieldset solid-taxi--fieldset--inline" ) do %>
+        <%= render "solid_taxi/form/input", form:, type: :number, attribute: :completed_jobs_from, label: I18n.t("shared.from"), label_class: "sr-only" %>
+        <%= render "solid_taxi/form/input", form:, type: :number, attribute: :completed_jobs_to, label: I18n.t("shared.to"), label_class: "sr-only" %>
+      <% end %>
+
+      <%= fieldset_tag(SolidQueue::Job.human_attribute_name(:failed_jobs), class: "solid-taxi--fieldset solid-taxi--fieldset--inline" ) do %>
+        <%= render "solid_taxi/form/input", form:, type: :number, attribute: :failed_jobs_from, label: I18n.t("shared.from"), label_class: "sr-only" %>
+        <%= render "solid_taxi/form/input", form:, type: :number, attribute: :failed_jobs_to, label: I18n.t("shared.to"), label_class: "sr-only" %>
+      <% end %>
+
+      <%= fieldset_tag(SolidQueue::Job.human_attribute_name(:enqueued_at), class: "solid-taxi--fieldset solid-taxi--fieldset--inline" ) do %>
+        <%= render "solid_taxi/form/input", form:, type: :datetime, attribute: :enqueued_at_from, label: I18n.t("shared.from"), label_class: "sr-only" %>
+        <%= render "solid_taxi/form/input", form:, type: :datetime, attribute: :enqueued_at_to, label: I18n.t("shared.to"), label_class: "sr-only" %>
+      <% end %>
+
+      <%= fieldset_tag(SolidQueue::Job.human_attribute_name(:finished_at), class: "solid-taxi--fieldset solid-taxi--fieldset--inline" ) do %>
+        <%= render "solid_taxi/form/input", form:, type: :datetime, attribute: :finished_at_from, label: I18n.t("shared.from"), label_class: "sr-only" %>
+        <%= render "solid_taxi/form/input", form:, type: :datetime, attribute: :finished_at_to, label: I18n.t("shared.to"), label_class: "sr-only" %>
+      <% end %>
+
+      <%= fieldset_tag(SolidQueue::Job.human_attribute_name(:failed_at), class: "solid-taxi--fieldset solid-taxi--fieldset--inline" ) do %>
+        <%= render "solid_taxi/form/input", form:, type: :datetime, attribute: :failed_at_from, label: I18n.t("shared.from"), label_class: "sr-only" %>
+        <%= render "solid_taxi/form/input", form:, type: :datetime, attribute: :failed_at_to, label: I18n.t("shared.to"), label_class: "sr-only" %>
+      <% end %>
+    <% end %>
+
+    <%= form.submit I18n.t("shared.search"), name: nil %>
+    <%= render "solid_taxi/form/reset_link" %>
+  <% end %>
+<% end %>

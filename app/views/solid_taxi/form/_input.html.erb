@@ -1,0 +1,31 @@
+<%
+  local_assigns.with_defaults(
+    label_class: "solid-taxi--label",
+    input_class: "solid-taxi--input",
+    placeholder: nil,
+    disabled: false
+  ) => {
+    form:,
+    type:,
+    attribute:,
+    label:,
+    label_class:,
+    input_class:,
+    disabled:
+  }
+
+  placeholder = placeholder || label
+%>
+
+<div>
+  <%= form.label attribute, label, for: attribute, class: class_names(label_class, "solid-taxi--label--disabled": disabled) %>
+
+  <% case type %>
+  <% when :text %>
+    <%= form.text_field attribute, placeholder:, class: input_class, disabled: %>
+  <% when :number %>
+    <%= form.number_field attribute, placeholder:, class: input_class, disabled: %>
+  <% when :datetime %>
+    <%= form.datetime_field attribute, class: input_class, disabled: %>
+  <% end %>
+</div>

@@ -1,0 +1,39 @@
+<%= render "solid_taxi/solid_queue/header" %>
+
+<h4><%= SolidQueue::RecurringTask.model_name.human(count: 2) %></h4>
+
+<%= render "query_form", model: @page.query_form %>
+
+<%= render "solid_taxi/pagination", pagination: @page.pagination %>
+
+<table class="solid-taxi--table">
+  <thead>
+    <tr>
+      <th><%= SolidQueue::RecurringTask.human_attribute_name(:key) %></th>
+      <th><%= SolidQueue::RecurringTask.human_attribute_name(:schedule) %></th>
+      <th><%= SolidQueue::RecurringTask.human_attribute_name(:command) %></th>
+      <th><%= SolidQueue::RecurringTask.human_attribute_name(:class_name) %></th>
+      <th><%= SolidQueue::RecurringTask.human_attribute_name(:arguments) %></th>
+      <th><%= SolidQueue::RecurringTask.human_attribute_name(:queue_name) %></th>
+      <th style="text-align: right;"><%= SolidQueue::RecurringTask.human_attribute_name(:priority) %></th>
+      <th><%= SolidQueue::RecurringTask.human_attribute_name(:description) %></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @page.query.rows.each do |recurring_task| %>
+      <tr>
+        <td><%= recurring_task.key %></td>
+        <td><%= recurring_task.schedule %></td>
+        <td><%= recurring_task.command %></td>
+        <td><%= recurring_task.class_name %></td>
+        <td><%= recurring_task.arguments %></td>
+        <td><%= recurring_task.queue_name %></td>
+        <td style="text-align: right;"><%= recurring_task.priority %></td>
+        <td><%= link_to "Show", solid_taxi.solid_queue_recurring_task_path(recurring_task) %></td>
+        <td><%= recurring_task.description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

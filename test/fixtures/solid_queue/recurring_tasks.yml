@@ -1,0 +1,47 @@
+clear_solid_queue_finished_jobs:
+  key: clear_solid_queue_finished_jobs
+  schedule: every hour at minute 12
+  command: 'SolidQueue::Job.clear_finished_in_batches(sleep_between_batches: 0.3)'
+  class_name:
+  arguments: |
+    []
+  queue_name:
+  priority: 0
+  static: true
+  description: "Clears solid_queue_jobs in state finished"
+
+random:
+  key: random
+  schedule: every minute
+  command: SecureRandom.uuid
+  class_name:
+  arguments: |
+    []
+  queue_name:
+  priority: 0
+  static: true
+  description: "Returns a random UUID"
+
+sleepy:
+  key: sleepy
+  schedule: every minute
+  command:
+  class_name: SleepyJob
+  arguments: |
+    ["1"]
+  queue_name:
+  priority: 0
+  static: true
+  description: "Sleeps most of the time"
+
+semaphory:
+  key: semaphory
+  schedule: every minute
+  command:
+  class_name: SemaphoryJob
+  arguments: |
+    []
+  queue_name:
+  priority: 0
+  static: true
+  description: "Uses a semaphore/concurrency key"

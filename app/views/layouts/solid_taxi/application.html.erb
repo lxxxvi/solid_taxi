@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Solid taxi</title>
+  <title>Solid Taxi</title>
+
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
   <%= yield :head %>
 
-  <%= stylesheet_link_tag    "solid_taxi/application", media: "all" %>
+  <style type="text/css">
+    <%= SolidTaxi::Engine.root.join("app/assets/stylesheets/solid_taxi/application.css").read %>
+  </style>
 </head>
 <body>
+  <header>
+    <%= render "solid_taxi/primary_navigation" %>
+  </header>
 
-<%= yield %>
+  <main>
+    <%= yield %>
+  </main>
 
+  <footer>
+    <%= render "solid_taxi/footer" %>
+  </footer>
 </body>
 </html>

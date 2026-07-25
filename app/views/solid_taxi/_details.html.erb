@@ -1,0 +1,6 @@
+<% local_assigns.with_defaults(open: false) => { open:, summary: } %>
+
+<details class="solid-taxi--details" <%= open ? "open" : nil  %>>
+  <summary><%= summary %></summary>
+  <%= yield %>
+</details>

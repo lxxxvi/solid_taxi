@@ -1,0 +1,29 @@
+<%= render "solid_taxi/solid_cable/header" %>
+
+<h3><%= SolidCable::Message.model_name.human(count: 2) %></h3>
+
+<%= render "query_form", model: @page.query_form %>
+
+<%= render "solid_taxi/pagination", pagination: @page.pagination %>
+
+<table class="solid-taxi--table">
+  <thead>
+    <tr>
+      <th><%= SolidCable::Message.human_attribute_name(:channel) %></th>
+      <th><%= SolidCable::Message.human_attribute_name(:payload) %></th>
+      <th style="text-align: right;"><%= SolidCable::Message.human_attribute_name(:channel_hash) %></th>
+      <th><%= SolidCable::Message.human_attribute_name(:created_at) %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @page.query.rows.each do |message| %>
+      <tr>
+        <td><%= message.channel %></td>
+        <td><%= message.payload %></td>
+        <td style="text-align: right;"><%= message.channel_hash %></td>
+        <td><%= message.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,15 +1,129 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+:root {
+  --solid-taxi--black: #0E0E0E;
+  --solid-taxi--gray-700: #2E2E2E;
+  --solid-taxi--gray-300: #BBBBBB;
+  --solid-taxi--gray-200: #DDDDDD;
+  --solid-taxi--white: #FFFFFF;
+  --solid-taxi--emphasis: tomato;
+}
+
+* {
+  font-family: monospace;
+  color: var(--solid-taxi--black);
+  background-color: var(--solid-taxi--white);
+}
+
+.solid-taxi--a--active {
+  color: var(--solid-taxi--emphasis);
+}
+
+.solid-taxi--fieldset {
+  display: flex;
+  row-gap: 1rem;
+  column-gap: 1rem;
+}
+.solid-taxi--fieldset--block {
+  flex-direction: column;
+
+  .solid-taxi--label:not(:first-of-type),
+  .solid-taxi--label {
+    display: block;
+  }
+}
+
+.solid-taxi--fieldset--inline {
+  flex-direction: row;
+
+  .solid-taxi--label:not(:first-of-type),
+  .solid-taxi--label {
+    display: inline;
+  }
+}
+
+.solid-taxi--legend {}
+
+.solid-taxi--input[disabled=disabled],
+.solid-taxi--label--disabled {
+  opacity: 0.7;
+}
+
+.solid-taxi--nav--primary-navigation {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    column-gap: 1rem;
+  }
+}
+
+.solid-taxi--nav--pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    column-gap: 1rem;
+  }
+}
+
+.solid-taxi--nav--solid_queue-navigation {
+  display: flex;
+  column-gap: 4rem;
+  align-items: center;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    column-gap: 1rem;
+  }
+}
+
+.solid-taxi--nav--solid_queue-recurring_task-navigation,
+.solid-taxi--nav--solid_queue-batch-navigation
+ {
+  display: flex;
+  column-gap: 4rem;
+  align-items: center;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    column-gap: 1rem;
+  }
+}
+
+.solid-taxi--sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.solid-taxi--table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th {
+    text-align: left;
+    background-color: var(--solid-taxi--gray-200);
+  }
+
+  td, th {
+    padding: 0.3rem 1rem;
+    border: 1px solid var(--solid-taxi--gray-300);
+  }
+}

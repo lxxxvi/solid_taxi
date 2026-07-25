@@ -1,0 +1,27 @@
+<%= render "solid_taxi/solid_queue/header" %>
+
+<h4><%= SolidQueue::Semaphore.model_name.human(count: 2) %></h4>
+
+<%= render "query_form", model: @page.query_form %>
+
+<%= render "solid_taxi/pagination", pagination: @page.pagination %>
+
+<table class="solid-taxi--table">
+  <thead>
+    <tr>
+      <th><%= SolidQueue::Semaphore.human_attribute_name(:key) %> </th>
+      <th><%= SolidQueue::Semaphore.human_attribute_name(:value) %> </th>
+      <th style="text-align: right;"><%= SolidQueue::Semaphore.human_attribute_name(:expires_at) %> </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @page.query.rows.each do |semaphore| %>
+      <tr>
+        <td><%= semaphore.key %></td>
+        <td><%= semaphore.value %></td>
+        <td style="text-align: right;"><%= semaphore.expires_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

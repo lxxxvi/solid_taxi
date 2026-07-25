@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+APP_ROOT = File.expand_path('..', __dir__)
+
+def system!(*args)
+  system(*args) || abort("\n== Command #{args} failed ==")
+end
+
+Dir.chdir APP_ROOT do
+  puts "\n== 🧪 Run tests (bin/rails test) =="
+  system! 'bin/rails test'
+
+  puts "\n== 🫧 Run rubocop (bin/rubocop --parallel) =="
+  system! "bin/rubocop --parallel"
+end

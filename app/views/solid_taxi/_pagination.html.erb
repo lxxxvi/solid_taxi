@@ -1,0 +1,40 @@
+<% local_assigns => {pagination:} %>
+
+<% if pagination.total_pages.positive? %>
+
+  <nav aria-labelledby="pagination" class="solid-taxi--nav solid-taxi--nav--pagination">
+    <h2 id="pagination" class="solid-taxi--sr-only">Pagination</h2>
+
+    <p>
+      <%= I18n.t("pagination.currently_displaying_page_x_of_y", x: pagination.page, y: pagination.total_pages) %>
+    </p>
+
+    <% if pagination.total_pages > 1 %>
+      <ul>
+        <li>
+          <%= link_to_unless(pagination.first_page?, I18n.t("pagination.first"), url_for(pagination.first_page_url_params)) %>
+        </li>
+        <li>
+          <%= link_to_unless(pagination.first_page?, I18n.t("pagination.previous"), url_for(pagination.previous_page_url_params)) %>
+        </li>
+        <li>
+          <%= link_to_unless(pagination.last_page?, I18n.t("pagination.next"), url_for(pagination.next_page_url_params)) %>
+        </li>
+        <li>
+          <%= link_to_unless(pagination.last_page?, I18n.t("pagination.last"), url_for(pagination.last_page_url_params)) %>
+        </li>
+      </ul>
+
+      <%= form_with(url: url_for, method: :get) do |f| %>
+        <% request.query_parameters[:query]&.each do |key, value| %>
+          <%= f.hidden_field "query[#{key}]", {value:} %>
+        <% end %>
+
+        <%= f.label I18n.t("pagination.go_to_page"), for: "pagination[page]" %>
+        <%= f.number_field "pagination[page]", value: pagination.page, min: 1, max: pagination.total_pages %>
+        <%= f.submit I18n.t("pagination.go"), name: nil %>
+      <% end %>
+    <% end %>
+  </nav>
+
+<% end %>

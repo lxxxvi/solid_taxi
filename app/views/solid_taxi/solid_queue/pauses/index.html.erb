@@ -1,0 +1,23 @@
+<%= render "solid_taxi/solid_queue/header" %>
+
+<h4><%= SolidQueue::Pause.model_name.human(count: 2) %></h4>
+
+<%= render "query_form", model: @page.query_form %>
+
+<%= render "solid_taxi/pagination", pagination: @page.pagination %>
+
+<table class="solid-taxi--table">
+  <thead>
+    <tr>
+      <th><%= SolidQueue::Pause.human_attribute_name(:queue_name) %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @page.query.rows.each do |pause| %>
+      <tr>
+        <td><%= pause.queue_name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

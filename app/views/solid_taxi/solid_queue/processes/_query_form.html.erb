@@ -1,0 +1,23 @@
+<% local_assigns[:model] %>
+
+<%= render "solid_taxi/details", open: model.any_queries?, summary: I18n.t("shared.search") do %>
+  <%= form_with(model:, url: url_for, method: :get) do |form| %>
+    <%= fieldset_tag(I18n.t("shared.search"), class: "solid-taxi--fieldset solid-taxi--fieldset--block") do %>
+      <%= render "solid_taxi/form/input", form:, type: :text, attribute: :kind, label: SolidQueue::Process.human_attribute_name(:kind) %>
+
+      <%= fieldset_tag(SolidQueue::Job.human_attribute_name(:last_heartbeat_at), class: "solid-taxi--fieldset solid-taxi--fieldset--inline" ) do %>
+        <%= render "solid_taxi/form/input", form:, type: :datetime, attribute: :last_heartbeat_at_from, label: I18n.t("shared.from"), label_class: "sr-only" %>
+        <%= render "solid_taxi/form/input", form:, type: :datetime, attribute: :last_heartbeat_at_to, label: I18n.t("shared.to"), label_class: "sr-only" %>
+      <% end %>
+
+      <%= render "solid_taxi/form/input", form:, type: :number, attribute: :supervisor_id, label: SolidQueue::Process.human_attribute_name(:supervisor_id) %>
+      <%= render "solid_taxi/form/input", form:, type: :number, attribute: :pid, label: SolidQueue::Process.human_attribute_name(:pid) %>
+      <%= render "solid_taxi/form/input", form:, type: :text, attribute: :hostname, label: SolidQueue::Process.human_attribute_name(:hostname) %>
+      <%= render "solid_taxi/form/input", form:, type: :text, attribute: :metadata, label: SolidQueue::Process.human_attribute_name(:metadata) %>
+      <%= render "solid_taxi/form/input", form:, type: :text, attribute: :name, label: SolidQueue::Process.human_attribute_name(:name) %>
+    <% end %>
+
+    <%= form.submit I18n.t("shared.search"), name: nil %>
+    <%= render "solid_taxi/form/reset_link" %>
+  <% end %>
+<% end %>

@@ -1,0 +1,52 @@
+# random
+recurring_random_on_2026_08_01_at_00_42_00:
+  job: recurring_solid_queue_recurring_job_on_2026_08_01_at_00_42_00
+  task_key: random
+  run_at: 2026-08-01 00:42:00 UTC
+
+recurring_random_on_2026_08_01_at_00_43_00:
+  job: recurring_solid_queue_recurring_job_on_2026_08_01_at_00_43_00
+  task_key: random
+  run_at: 2026-08-01 00:43:00 UTC
+
+recurring_random_on_2026_08_01_at_00_44_00:
+  job: recurring_solid_queue_recurring_job_on_2026_08_01_at_00_44_00
+  task_key: random
+  run_at: 2026-08-01 00:44:00 UTC
+
+recurring_random_on_2026_08_01_at_00_45_00:
+  job: recurring_solid_queue_recurring_job_on_2026_08_01_at_00_45_00
+  task_key: random
+  run_at: 2026-08-01 00:45:00 UTC
+
+recurring_random_on_2026_08_01_at_00_46_00:
+  job: recurring_solid_queue_recurring_job_on_2026_08_01_at_00_46_00
+  task_key: random
+  run_at: 2026-08-01 00:46:00 UTC
+
+# semaphory
+recurring_semaphory_on_2026_08_01_at_00_51_00:
+  job: recurring_semaphory_job_on_on_2026_08_01_at_00_51_00
+  task_key: semaphory
+  run_at: 2026-08-01 00:51:00 UTC
+
+recurring_semaphory_on_2026_08_01_at_00_52_00:
+  job: recurring_semaphory_job_on_on_2026_08_01_at_00_52_00
+  task_key: semaphory
+  run_at: 2026-08-01 00:52:00 UTC
+
+recurring_semaphory_on_2026_08_01_at_00_53_00:
+  job: recurring_semaphory_job_on_on_2026_08_01_at_00_53_00
+  task_key: semaphory
+  run_at: 2026-08-01 00:53:00 UTC
+
+# sleepy
+recurring_sleepy_on_2026_08_01_at_00_42_00:
+  job: recurring_sleepy_job_on_2026_08_01_at_00_42_00
+  task_key: sleepy
+  run_at: 2026-08-01 00:42:00 UTC
+
+recurring_sleepy_on_2026_08_01_at_00_43_00:
+  job: recurring_sleepy_job_on_2026_08_01_at_00_43_00
+  task_key: sleepy
+  run_at: 2026-08-01 00:43:00 UTC

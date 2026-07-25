@@ -1,0 +1,80 @@
+<%= render "solid_taxi/solid_queue/batches/header", batch: @batch %>
+
+<h6><%= I18n.t("shared.about") %></h6>
+
+<table class="solid-taxi--table">
+  <thead>
+    <tr>
+      <th scope="col">Property</th>
+      <th scope="col">Value</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <th scope="row"><%= SolidQueue::Batch.human_attribute_name(:id) %></th>
+      <td><%= @batch.id %></td>
+    </tr>
+
+    <tr>
+      <th scope="row"><%= SolidQueue::Batch.human_attribute_name(:active_job_batch_id) %></th>
+      <td><%= @batch.active_job_batch_id %></td>
+    </tr>
+
+    <tr>
+      <th scope="row"><%= SolidQueue::Batch.human_attribute_name(:description) %></th>
+      <td><%= @batch.description %>
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row"><%= SolidQueue::Batch.human_attribute_name(:on_finish) %></th>
+      <td><%= @batch.on_finish %></td>
+    </tr>
+
+    <tr>
+      <th scope="row"><%= SolidQueue::Batch.human_attribute_name(:on_success) %></th>
+      <td><%= @batch.on_success %></td>
+    </tr>
+
+    <tr>
+      <th scope="row"><%= SolidQueue::Batch.human_attribute_name(:on_failure) %></th>
+      <td><%= @batch.on_failure %></td>
+    </tr>
+
+    <tr>
+      <th scope="row"><%= SolidQueue::Batch.human_attribute_name(:metadata) %></th>
+      <td><%= @batch.metadata %></td>
+    </tr>
+
+    <tr>
+      <th scope="row"><%= SolidQueue::Batch.human_attribute_name(:total_jobs) %></th>
+      <td><%= @batch.total_jobs %></td>
+    </tr>
+
+    <tr>
+      <th scope="row"><%= SolidQueue::Batch.human_attribute_name(:completed_jobs) %></th>
+      <td><%= @batch.completed_jobs %></td>
+    </tr>
+
+    <tr>
+      <th scope="row"><%= SolidQueue::Batch.human_attribute_name(:failed_jobs) %></th>
+      <td><%= @batch.failed_jobs %></td>
+    </tr>
+
+    <tr>
+      <th scope="row"><%= SolidQueue::Batch.human_attribute_name(:enqueued_at) %></th>
+      <td><%= @batch.enqueued_at %></td>
+    </tr>
+
+    <tr>
+      <th scope="row"><%= SolidQueue::Batch.human_attribute_name(:finished_at) %></th>
+      <td><%= @batch.finished_at %></td>
+    </tr>
+
+    <tr>
+      <th scope="row"><%= SolidQueue::Batch.human_attribute_name(:failed_at) %></th>
+      <td><%= @batch.failed_at %></td>
+    </tr>
+  </tbody>
+</table>

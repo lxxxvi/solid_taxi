@@ -1,0 +1,44 @@
+<%= render "solid_taxi/solid_queue/header" %>
+
+<h4><%= SolidQueue::Job.model_name.human(count: 2) %></h4>
+
+<%= render "query_form", model: @page.query_form %>
+
+<%= render "solid_taxi/pagination", pagination: @page.pagination %>
+
+<table class="solid-taxi--table">
+  <thead>
+    <tr>
+      <th><%= SolidQueue::Job.human_attribute_name(:queue_name) %></th>
+      <th><%= SolidQueue::Job.human_attribute_name(:class_name) %></th>
+      <th><%= SolidQueue::Job.human_attribute_name(:arguments) %></th>
+      <th style="text-align: right;"><%= SolidQueue::Job.human_attribute_name(:priority) %></th>
+      <th><%= SolidQueue::Job.human_attribute_name(:active_job_id) %></th>
+      <th style="text-align: right;"><%= SolidQueue::Job.human_attribute_name(:scheduled_at) %></th>
+      <th style="text-align: right;"><%= SolidQueue::Job.human_attribute_name(:finished_at) %></th>
+      <th><%= SolidQueue::Job.human_attribute_name(:concurrency_key) %></th>
+      <% if SolidTaxi::SolidQueue.supports_batches? %>
+        <th style="text-align: right;"><%= SolidQueue::Job.human_attribute_name(:batch_id) %></th>
+      <% end %>
+      <th><%= SolidQueue::Job.human_attribute_name(:custom__status) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @page.query.rows.each do |row| %>
+      <tr>
+        <td><%= row.queue_name %></td>
+        <td><%= row.class_name %></td>
+        <td><%= row.arguments %></td>
+        <td style="text-align: right;"><%= row.priority %></td>
+        <td><%= row.active_job_id %></td>
+        <td style="text-align: right;"><%= row.scheduled_at %></td>
+        <td style="text-align: right;"><%= row.finished_at %></td>
+        <td><%= row.concurrency_key %></td>
+        <% if SolidTaxi::SolidQueue.supports_batches? %>
+          <td><%= row.batch_id %></td>
+        <% end %>
+        <td><%= row.custom__status %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

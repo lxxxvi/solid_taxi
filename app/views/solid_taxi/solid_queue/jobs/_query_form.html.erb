@@ -1,0 +1,39 @@
+<% local_assigns[:model] %>
+
+<%= render "solid_taxi/details", open: model.any_queries?, summary: I18n.t("shared.search") do %>
+  <%= form_with(model:, url: url_for, method: :get) do |form| %>
+    <%= fieldset_tag(I18n.t("shared.search"), class: "solid-taxi--fieldset solid-taxi--fieldset--block") do %>
+      <%= render "solid_taxi/form/input", form:, type: :text, attribute: :queue_name, label: SolidQueue::Job.human_attribute_name(:queue_name) %>
+      <%= render "solid_taxi/form/input", form:, type: :text, attribute: :class_name, label: SolidQueue::Job.human_attribute_name(:class_name) %>
+      <%= render "solid_taxi/form/input", form:, type: :text, attribute: :arguments, label: SolidQueue::Job.human_attribute_name(:arguments) %>
+
+      <%= fieldset_tag(SolidQueue::Job.human_attribute_name(:priority), class: "solid-taxi--fieldset solid-taxi--fieldset--inline" ) do %>
+        <%= render "solid_taxi/form/input", form:, type: :number, attribute: :priority_from, label: I18n.t("shared.from"), label_class: "sr-only" %>
+        <%= render "solid_taxi/form/input", form:, type: :number, attribute: :priority_to, label: I18n.t("shared.to"), label_class: "sr-only" %>
+      <% end %>
+
+      <%= render "solid_taxi/form/input", form:, type: :text, attribute: :active_job_id, label: SolidQueue::Job.human_attribute_name(:active_job_id) %>
+
+      <%= fieldset_tag(SolidQueue::Job.human_attribute_name(:scheduled_at), class: "solid-taxi--fieldset solid-taxi--fieldset--inline" ) do %>
+        <%= render "solid_taxi/form/input", form:, type: :datetime, attribute: :scheduled_at_from, label: I18n.t("shared.from"), label_class: "sr-only" %>
+        <%= render "solid_taxi/form/input", form:, type: :datetime, attribute: :scheduled_at_to, label: I18n.t("shared.to"), label_class: "sr-only" %>
+      <% end %>
+
+      <%= fieldset_tag(SolidQueue::Job.human_attribute_name(:finished_at), class: "solid-taxi--fieldset solid-taxi--fieldset--inline" ) do %>
+        <%= render "solid_taxi/form/input", form:, type: :datetime, attribute: :finished_at_from, label: I18n.t("shared.from"), label_class: "sr-only" %>
+        <%= render "solid_taxi/form/input", form:, type: :datetime, attribute: :finished_at_to, label: I18n.t("shared.to"), label_class: "sr-only" %>
+      <% end %>
+
+      <%= render "solid_taxi/form/input", form:, type: :text, attribute: :concurrency_key, label: SolidQueue::Job.human_attribute_name(:concurrency_key) %>
+
+      <% if SolidTaxi::SolidQueue.supports_batches? %>
+        <%= render "solid_taxi/form/input", form:, type: :number, attribute: :batch_id, label: SolidQueue::Job.human_attribute_name(:batch_id) %>
+      <% end %>
+
+      <%= render "solid_taxi/form/input", form:, type: :text, attribute: :custom__status, label: SolidQueue::Job.human_attribute_name(:custom__status) %>
+    <% end %>
+
+    <%= form.submit I18n.t("shared.search"), name: nil, class: "solid-taxi--input" %>
+    <%= render "solid_taxi/form/reset_link" %>
+  <% end %>
+<% end %>

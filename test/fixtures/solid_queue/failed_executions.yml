@@ -1,0 +1,11 @@
+batch_failing_crash_job_failed_execution:
+  job: batch_failing_crash_job
+  error: |
+    {
+      "exception_class" => "RuntimeError",
+      "message" => "CrashJob crashed after 1 second(s)",
+      "backtrace" =>
+      [
+        "/solid_taxi/test/dummy/app/jobs/crash_job.rb:5:in 'CrashJob#perform'"
+      ]
+    }

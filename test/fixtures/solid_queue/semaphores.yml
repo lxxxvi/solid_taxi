@@ -1,0 +1,4 @@
+semaphory_job_semaphore:
+ key: "SemaphoryJob/semaphory_job"
+ value: 0
+ expires_at: "2026-08-01 00:02:00 UTC"

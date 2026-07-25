@@ -1,0 +1,54 @@
+supervisor:
+  kind: Supervisor(fork)
+  last_heartbeat_at: '2026-08-01 00:54:00'
+  pid: 10
+  hostname: solid-queue-host-58f877658d-qblsm
+  metadata: "{}"
+  name: supervisor(fork)-b16158b6ba1a508fc062
+
+dispatcher:
+  kind: Dispatcher
+  last_heartbeat_at: '2026-08-01 00:55:00'
+  supervisor: supervisor
+  pid: 11
+  hostname: solid-queue-host-58f877658d-qblsm
+  metadata: |
+    {
+      "polling_interval": 1,
+      "batch_size": 500,
+      "concurrency_maintenance_interval": 600
+    }
+  name: dispatcher-3446c6912e741c309150
+
+scheduler:
+  kind: Scheduler
+  last_heartbeat_at: '2026-08-01 00:56:00'
+  supervisor: supervisor
+  pid: 12
+  hostname: solid-queue-host-58f877658d-qblsm
+  metadata: |
+    {
+      "recurring_schedule":
+      [
+        "clear_solid_queue_finished_jobs",
+        "random",
+        "sleepy",
+        "semaphory"
+      ]
+    }
+  name: scheduler-db2575801adea5f483c1
+
+worker:
+  kind: Worker
+  last_heartbeat_at: '2026-08-01 00:57:00'
+  supervisor: supervisor
+  pid: 13
+  hostname: solid-queue-host-58f877658d-qblsm
+  metadata: |
+    {
+      "polling_interval": 0.1,
+      "queues": "north",
+      "pool_type": "thread",
+      "pool_size": 3
+    }
+  name: worker-bef148c31e44f5937714

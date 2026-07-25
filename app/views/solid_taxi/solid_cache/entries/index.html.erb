@@ -1,0 +1,37 @@
+<%= render "solid_taxi/solid_cache/header" %>
+
+<h3><%= SolidCache::Entry.model_name.human(count: 2) %></h3>
+
+<%= render "query_form", model: @page.query_form %>
+
+<%= render "solid_taxi/pagination", pagination: @page.pagination %>
+
+<table class="solid-taxi--table">
+  <thead>
+    <tr>
+      <th><%= SolidCache::Entry.human_attribute_name(:key) %></th>
+      <th><%= SolidCache::Entry.human_attribute_name(:value) %></th>
+      <th style="text-align: right;"><%= SolidCache::Entry.human_attribute_name(:key_hash) %></th>
+      <th style="text-align: right;"><%= SolidCache::Entry.human_attribute_name(:byte_size) %></th>
+      <th style="text-align: right;"><%= SolidCache::Entry.human_attribute_name(:created_at) %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @page.query.rows.each do |entry| %>
+      <tr>
+        <td><%= entry.key %></td>
+        <td>
+          <button command="show-modal" commandfor="<%= dom_id(entry, :value) %>">Show value</button>
+          <dialog id="<%= dom_id(entry, :value) %>" closedby="any">
+            <pre><code><%= Rails.cache.instance_variable_get(:@coder).load(entry.value)&.value || entry.value %></code></pre>
+            <button commandfor="<%= dom_id(entry, :value) %>" command="close">Close</button>
+          </dialog>
+        </td>
+        <td style="text-align: right;"><%= entry.key_hash %></td>
+        <td style="text-align: right;"><%= entry.byte_size %></td>
+        <td style="text-align: right;"><%= entry.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

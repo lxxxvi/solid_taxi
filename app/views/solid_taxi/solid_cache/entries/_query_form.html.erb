@@ -1,0 +1,24 @@
+<% local_assigns[:model] %>
+
+<%= render "solid_taxi/details", open: model.any_queries?, summary: I18n.t("shared.search") do %>
+  <%= form_with(model:, url: url_for, method: :get) do |form| %>
+    <%= fieldset_tag(I18n.t("shared.search"), class: "solid-taxi--fieldset solid-taxi--fieldset--block") do %>
+      <%= render "solid_taxi/form/input", form:, type: :text, attribute: :key, label: SolidCache::Entry.human_attribute_name(:key), placeholder: I18n.t("shared.binary_field_not_queryable"), disabled: true %>
+      <%= render "solid_taxi/form/input", form:, type: :text, attribute: :value, label: SolidCache::Entry.human_attribute_name(:value), placeholder: I18n.t("shared.binary_field_not_queryable"), disabled: true %>
+      <%= render "solid_taxi/form/input", form:, type: :number, attribute: :key_hash, label: SolidCache::Entry.human_attribute_name(:key_hash) %>
+
+      <%= fieldset_tag(SolidCache::Entry.human_attribute_name(:byte_size), class: "solid-taxi--fieldset solid-taxi--fieldset--inline") do %>
+        <%= render "solid_taxi/form/input", form:, type: :number, attribute: :byte_size_from, label: I18n.t("shared.from") %>
+        <%= render "solid_taxi/form/input", form:, type: :number, attribute: :byte_size_to, label: I18n.t("shared.to") %>
+      <% end %>
+
+      <%= fieldset_tag(SolidCache::Entry.human_attribute_name(:created_at), class: "solid-taxi--fieldset solid-taxi--fieldset--inline") do %>
+        <%= render "solid_taxi/form/input", form:, type: :datetime, attribute: :created_at_from, label: I18n.t("shared.from") %>
+        <%= render "solid_taxi/form/input", form:, type: :datetime, attribute: :created_at_to, label: I18n.t("shared.to") %>
+      <% end %>
+    <% end %>
+
+    <%= form.submit I18n.t("shared.search"), name: nil %>
+    <%= render "solid_taxi/form/reset_link" %>
+  <% end %>
+<% end %>

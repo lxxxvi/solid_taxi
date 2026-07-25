@@ -1,0 +1,22 @@
+<% local_assigns[:model] %>
+
+<%= render "solid_taxi/details", open: model.any_queries?, summary: I18n.t("shared.search") do %>
+  <%= form_with(model:, url: url_for, method: :get) do |form| %>
+    <%= fieldset_tag(I18n.t("shared.search"), class: "solid-taxi--fieldset solid-taxi--fieldset--block") do %>
+
+      <%= render "solid_taxi/form/input", form:, type: :text, attribute: :key, label: SolidQueue::RecurringTask.human_attribute_name(:key) %>
+      <%= render "solid_taxi/form/input", form:, type: :text, attribute: :schedule, label: SolidQueue::RecurringTask.human_attribute_name(:schedule) %>
+      <%= render "solid_taxi/form/input", form:, type: :text, attribute: :command, label: SolidQueue::RecurringTask.human_attribute_name(:command) %>
+      <%= render "solid_taxi/form/input", form:, type: :text, attribute: :queue_name, label: SolidQueue::RecurringTask.human_attribute_name(:queue_name) %>
+
+
+      <%= fieldset_tag(SolidQueue::Job.human_attribute_name(:priority), class: "solid-taxi--fieldset solid-taxi--fieldset--inline" ) do %>
+        <%= render "solid_taxi/form/input", form:, type: :number, attribute: :priority_from, label: I18n.t("shared.from"), label_class: "sr-only" %>
+        <%= render "solid_taxi/form/input", form:, type: :number, attribute: :priority_to, label: I18n.t("shared.to"), label_class: "sr-only" %>
+      <% end %>
+    <% end %>
+
+    <%= form.submit I18n.t("shared.search"), name: nil, class: "solid-taxi--input" %>
+    <%= render "solid_taxi/form/reset_link" %>
+  <% end %>
+<% end %>

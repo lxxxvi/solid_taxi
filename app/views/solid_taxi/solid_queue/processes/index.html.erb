@@ -1,0 +1,35 @@
+<%= render "solid_taxi/solid_queue/header" %>
+
+<h4><%= SolidQueue::Process.model_name.human(count: 2) %></h4>
+
+<%= render "query_form", model: @page.query_form %>
+
+<%= render "solid_taxi/pagination", pagination: @page.pagination %>
+
+<table class="solid-taxi--table">
+  <thead>
+    <tr>
+      <th><%= SolidQueue::Process.human_attribute_name(:kind) %></th>
+      <th style="text-align: right;"><%= SolidQueue::Process.human_attribute_name(:last_heartbeat_at) %></th>
+      <th style="text-align: right;"><%= SolidQueue::Process.human_attribute_name(:supervisor_id) %></th>
+      <th style="text-align: right;"><%= SolidQueue::Process.human_attribute_name(:pid) %></th>
+      <th><%= SolidQueue::Process.human_attribute_name(:hostname) %></th>
+      <th><%= SolidQueue::Process.human_attribute_name(:metadata) %></th>
+      <th><%= SolidQueue::Process.human_attribute_name(:name) %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @page.query.rows.each do |process| %>
+      <tr>
+        <td><%= process.kind %></td>
+        <td style="text-align: right;"><%= process.last_heartbeat_at %></td>
+        <td style="text-align: right;"><%= process.supervisor_id %></td>
+        <td style="text-align: right;"><%= process.pid %></td>
+        <td><%= process.hostname %></td>
+        <td><%= process.metadata %></td>
+        <td><%= process.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
